@@ -6,7 +6,6 @@ public class day3 {
     static int nbits = 12;
     static int scanlines =  1000;
 
-
     // part 1 ans: 1071734
     //part 2 ans: 6124992
     static int oxygen(List<String> input) {
@@ -30,7 +29,6 @@ public class day3 {
         }
         return Integer.parseInt(oxygen.get(0), 2);
     }
-
 
     static int co2(List<String> input) {
         List<String> co2 = new ArrayList<String>(input);
@@ -57,7 +55,6 @@ public class day3 {
     static int solution2(List<String> input) {return co2(input) * oxygen(input);};
 
     static int solution1(String[] input) {
-        int n = input.length;
         int[] result = new int[nbits];
 
         for (String i: input) {
@@ -68,7 +65,6 @@ public class day3 {
         }
         StringBuilder binarytxt = new StringBuilder();
         StringBuilder ibinarytxt = new StringBuilder();
-
         for (int i = 0; i < nbits; i++) {
             if(result[i] > input.length / 2) {
                 binarytxt.append('1');
@@ -84,7 +80,6 @@ public class day3 {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-
         System.out.println("input: ");
        // String[] input = new String[scanlines]; changed for solution2;
         List<String> input  = new ArrayList<String>();
@@ -92,8 +87,6 @@ public class day3 {
            // input[i] = sc.nextLine();
             input.add(sc.nextLine());
         }
-        ///System.out.println(co2(input));
         System.out.println(solution2(input));
-      //  System.out.println(solution1(input));
     }
 }
