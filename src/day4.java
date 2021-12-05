@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class day4 {
     //part 1 ans: 55770
-    //part 2 ans:
+    //part 2 ans: 2980
     static int n = 5;
     static List<Integer> numbers = new ArrayList<Integer>();
     static List<Board> boards = new ArrayList<Board>();
@@ -15,6 +15,7 @@ public class day4 {
     public static class Board {
         public BoardPiece[][] pieces = new BoardPiece[n][n];
         public int choosenPieces;
+        public boolean boardWon; //for part 2
 
         public Board(Scanner reader) {
             for(int i = 0; i < n; i++) {
@@ -25,6 +26,7 @@ public class day4 {
                 }
             }
             this.choosenPieces = 0;
+            this.boardWon = false;
         }
 
         public void addNumber(int number) {
@@ -99,16 +101,22 @@ public class day4 {
             if (sc.hasNext())
                 sc.nextLine();
         }
+        int result = 0;
 
         for (int num : numbers)
             for (Board board : boards) {
                 board.addNumber(num);
-                if (board.checkWin()) {
-                    System.out.println(board.sumUnmarked()*num);
-                    System.exit(0);
+                if (board.checkWin() && !board.boardWon) {
+                   // System.out.println(board.sumUnmarked()*num);
+                    result = board.sumUnmarked()*num; //for part 2
+                    board.boardWon = true; // for part 2
+                    //System.exit(0);
                 }
 
             }
+
+
+        System.out.println(result); // for part 2
 
     }
 }
