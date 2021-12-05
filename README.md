@@ -7,3 +7,5 @@ My solutions for Advent of Code 2021
 [day 2](https://github.com/wau/Avent_of_Code_2021/blob/master/src/day2.java) 
 
 [day 3](https://github.com/wau/Avent_of_Code_2021/blob/master/src/day3.java)
+
+[day 4](https://github.com/wau/Avent_of_Code_2021/blob/master/src/day4.java)
